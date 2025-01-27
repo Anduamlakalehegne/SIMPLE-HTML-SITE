@@ -1,0 +1,123 @@
+// Variables for colors and spacing
+$primary-color: #6200ee;
+$secondary-color: #03dac6;
+$background-color: #f5f5f5;
+$text-color: #333;
+$border-radius: 8px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// Global styles
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+// Container for the search section
+section {
+    background: white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+// Title styling
+.title {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+// Search input styling
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    input[type="text"] {
+        padding: 0.75rem;
+        width: 100%;
+        max-width: 400px;
+        border: 2px solid $primary-color;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+            border-color: $secondary-color;
+        }
+
+        &::placeholder {
+            color: #999;
+        }
+    }
+}
+
+// Results list styling
+ul#results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    li {
+        background: white;
+        padding: 1rem;
+        border: 1px solid #eee;
+        border-radius: $border-radius;
+        margin-bottom: 1rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: $box-shadow;
+            border-color: $secondary-color;
+        }
+
+        .comment-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: $primary-color;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-email {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-body {
+            font-size: 0.9rem;
+            color: $text-color;
+            line-height: 1.4;
+        }
+    }
+}
+
+// Loading animation (optional)
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid $primary-color;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
